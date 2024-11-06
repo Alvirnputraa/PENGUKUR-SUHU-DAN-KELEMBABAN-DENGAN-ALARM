@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Alvi Al Virana Putra",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 173.4, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 192.3,
+      "left": -159,
+      "attrs": { "temperature": "27.3" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -60.8,
+      "left": -13.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 79.2,
+      "left": 280.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "red", [ "v86.4", "h303.4" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v96", "h370.4" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-9.6", "v470.5", "h178.6" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "v460.8", "h178.5" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-19.2", "v470.6", "h274.2" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-28.8", "v470.7", "h293.3" ] ],
+    [ "bz1:1", "uno:5V", "green", [ "v249.6", "h-147.8" ] ],
+    [ "bz1:2", "uno:8", "green", [ "v0" ] ],
+    [ "dht1:GND", "uno:GND.2", "black", [ "v105.6", "h284.1" ] ]
+  ],
+  "dependencies": {}
+}
